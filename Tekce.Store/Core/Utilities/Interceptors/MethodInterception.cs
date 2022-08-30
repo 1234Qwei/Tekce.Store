@@ -1,8 +1,7 @@
 ﻿using Castle.DynamicProxy;
+using Microsoft.AspNetCore.Http;
 using System;
-using System.Linq;
 using System.Threading.Tasks;
-
 namespace Core.Utilities.Interceptors
 {
     public abstract class MethodInterception : MethodInterceptionBaseAttribute
@@ -36,12 +35,6 @@ namespace Core.Utilities.Interceptors
 
         protected virtual void OnBefore(IInvocation invocation)
         {
-            if (!invocation.Method.Name.ToLower().Contains("create")) { return; }
-            var parameters = invocation.Method.GetParameters();
-            var createdBy = parameters.FirstOrDefault(x => x.Name == "CreatedBy");
-            if (createdBy is null) { return; }
-            parameters.SetValue(Guid.NewGuid(), createdBy.Position);
-
         }
 
         protected virtual void OnAfter(IInvocation invocation)

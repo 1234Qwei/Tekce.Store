@@ -8,11 +8,6 @@
 		<CodeAnalysisRuleSet>$(SolutionDir)\shared\DevArchitectureCodeAnalysis.ruleset</CodeAnalysisRuleSet>
 	</PropertyGroup>
 	<ItemGroup>
-	  <Compile Remove="Migrations\Ora\**" />
-	  <EmbeddedResource Remove="Migrations\Ora\**" />
-	  <None Remove="Migrations\Ora\**" />
-	</ItemGroup>
-	<ItemGroup>
 		<Compile Remove="Concrete\EntityFramework\ContextExtensions.cs" />
 	</ItemGroup>
 	<ItemGroup>

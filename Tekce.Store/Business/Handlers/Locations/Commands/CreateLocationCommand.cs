@@ -45,8 +45,7 @@ namespace Business.Handlers.Locations.Commands
 			[SecuredOperation(Priority = 1)]
 			public async Task<IResult> Handle(CreateLocationCommand request, CancellationToken cancellationToken)
 			{
-					return new ErrorResult(Messages.NameAlreadyExist);
-
+				
 				var addedLocation = new Location
 				{
 					Pid = request.Pid,

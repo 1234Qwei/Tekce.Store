@@ -8,7 +8,7 @@ namespace DataAccess.Concrete.Configurations
     {
         public void Configure(EntityTypeBuilder<UserClaim> builder)
         {
-            builder.HasKey(x => new { x.UserId, x.ClaimId });
+            builder.HasKey(x => new { x.Id ,x.UserId,x.ClaimId});
         }
     }
 }

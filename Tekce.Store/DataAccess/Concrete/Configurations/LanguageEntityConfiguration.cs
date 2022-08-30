@@ -10,8 +10,8 @@ namespace DataAccess.Concrete.Configurations
             builder.Property(x => x.Code).HasMaxLength(10).IsRequired();
             builder.Property(x => x.Name).HasMaxLength(10).IsRequired();
             builder.HasData(
-                new Language { Id =new System.Guid("00000000-0000-0000-0000-000000000000"), Name = "Türkçe", Code = "tr-TR" },
-                new Language { Id = new System.Guid("00000000-0000-0000-0000-000000000001"), Name = "English", Code = "en-US" });
+                new Language { Id =new System.Guid("00000000-0000-0000-0000-000000000001"), Name = "Türkçe", Code = "tr-TR" },
+                new Language { Id = new System.Guid("00000000-0000-0000-0000-000000000002"), Name = "English", Code = "en-US" });
 
             base.Configure(builder);
         }

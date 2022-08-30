@@ -3,15 +3,17 @@ using System;
 using DataAccess.Concrete.EntityFramework.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(ProjectDbContext))]
-    partial class ProjectDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220830212934_mig1")]
+    partial class mig1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -250,966 +252,966 @@ namespace DataAccess.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("be3f33b3-6c9f-483c-92ec-ee10555d0111"),
+                            Id = new Guid("76743ccd-878e-4031-9148-24a1b4ce627c"),
                             Code = "Login",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Giriş"
                         },
                         new
                         {
-                            Id = new Guid("4ebb9247-dbba-4d91-b581-d4f34637416a"),
+                            Id = new Guid("725be0b3-8f85-4f3b-a80d-3338faf4366d"),
                             Code = "Email",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "E posta"
                         },
                         new
                         {
-                            Id = new Guid("8d175127-5f09-49f8-9aac-166e333dd3c1"),
+                            Id = new Guid("015157b2-0393-4567-89d5-3d766ffd56d6"),
                             Code = "Password",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Parola"
                         },
                         new
                         {
-                            Id = new Guid("d3f9ba74-4d52-4f44-baa5-403f0b774fb5"),
+                            Id = new Guid("cd1e192c-1493-464f-8146-717e0b200868"),
                             Code = "Update",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Güncelle"
                         },
                         new
                         {
-                            Id = new Guid("2a4c2ab9-9033-4196-bbd9-cbbdd38df365"),
+                            Id = new Guid("2cdd0f2e-53de-4b3d-bd51-4751b43444c2"),
                             Code = "Delete",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Sil"
                         },
                         new
                         {
-                            Id = new Guid("f315b994-67c6-44cb-b064-6c931d2d93cf"),
+                            Id = new Guid("abb3252f-ae18-4581-a3b3-cc82584386eb"),
                             Code = "UsersGroups",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Kullanıcının Grupları"
                         },
                         new
                         {
-                            Id = new Guid("ad7b867c-a8cc-4950-b35e-356e4f712ecd"),
+                            Id = new Guid("333c2a35-9174-4744-88d3-f6fce25c8d2c"),
                             Code = "UsersClaims",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Kullanıcının Yetkileri"
                         },
                         new
                         {
-                            Id = new Guid("5112ac1e-cb1a-409a-91f3-97c8735ed1eb"),
+                            Id = new Guid("a63da07b-1dcd-40ec-9946-24ff463cf2c2"),
                             Code = "Create",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Yeni"
                         },
                         new
                         {
-                            Id = new Guid("c8d34e9a-200b-4b47-b397-eda352d12460"),
+                            Id = new Guid("3c68afb2-9031-4ea9-bc96-b724c0d778e0"),
                             Code = "Users",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Kullanıcılar"
                         },
                         new
                         {
-                            Id = new Guid("38bae803-b3c5-4085-9658-0b39bd53a3dd"),
+                            Id = new Guid("154fcebc-78a6-4d8e-bdc1-b33db364117b"),
                             Code = "Groups",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Gruplar"
                         },
                         new
                         {
-                            Id = new Guid("c096cc86-a172-4e6c-a175-b0d50c54c2cc"),
+                            Id = new Guid("4a4daca7-f419-406c-a26e-fd8dd3dac2e9"),
                             Code = "Login",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Login"
                         },
                         new
                         {
-                            Id = new Guid("24c87c97-4d81-48f8-b2e7-c54dd5c1c8b6"),
+                            Id = new Guid("32c8181e-e9b7-4fa0-839f-8344f8df2c58"),
                             Code = "Email",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Email"
                         },
                         new
                         {
-                            Id = new Guid("4804c8ec-a815-4a83-a528-c5bddb27be79"),
+                            Id = new Guid("98e00a57-3a6e-47dc-8bf6-2c4a03568b0b"),
                             Code = "Password",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Password"
                         },
                         new
                         {
-                            Id = new Guid("4a5fb2ab-7897-42e3-b0d1-03f4682c7245"),
+                            Id = new Guid("02140d08-2260-4e0c-871c-bbb491a94a2f"),
                             Code = "Update",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Update"
                         },
                         new
                         {
-                            Id = new Guid("242444d8-0709-4086-b7b2-6aa9b3604e6a"),
+                            Id = new Guid("412ca3fe-1c68-49f9-a35e-5a23af723856"),
                             Code = "Delete",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Delete"
                         },
                         new
                         {
-                            Id = new Guid("c151e878-d7dc-4be6-a7e2-09abe1ca8e12"),
+                            Id = new Guid("64d7df14-c1a1-4b2f-b65b-95429f3872d6"),
                             Code = "UsersGroups",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "User's Groups"
                         },
                         new
                         {
-                            Id = new Guid("c84ed780-4b2c-44f0-a74a-71135ef1ced1"),
+                            Id = new Guid("5a0ac35c-6ab8-44a1-9c03-0804197028eb"),
                             Code = "UsersClaims",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "User's Claims"
                         },
                         new
                         {
-                            Id = new Guid("928e360f-15ec-4d5d-a57c-5d6cf92417d6"),
+                            Id = new Guid("32f8010b-95bb-45f4-9563-552e88f98e1d"),
                             Code = "Create",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Create"
                         },
                         new
                         {
-                            Id = new Guid("f78efd7c-9df1-41f8-9a9b-5172b4557e39"),
+                            Id = new Guid("336cf876-c289-418a-85fd-1f1fb3de3a32"),
                             Code = "Users",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Users"
                         },
                         new
                         {
-                            Id = new Guid("3f80afb7-791c-494b-8ef7-0f13e12e3e92"),
+                            Id = new Guid("d8f8d673-3a1a-44b2-8188-53090e20c51e"),
                             Code = "Groups",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Groups"
                         },
                         new
                         {
-                            Id = new Guid("b70a5dfa-4707-42aa-8fd6-67323fa2c69c"),
+                            Id = new Guid("43d08270-fb6f-4821-8de4-7a5e1f9949ad"),
                             Code = "OperationClaim",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Operasyon Yetkileri"
                         },
                         new
                         {
-                            Id = new Guid("8b3a2f74-817d-4996-8ce7-0166805ed49f"),
+                            Id = new Guid("8c88b7d3-3d35-4cde-941f-ea756f79fe98"),
                             Code = "OperationClaim",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Operation Claim"
                         },
                         new
                         {
-                            Id = new Guid("e8018f8a-667d-46b7-9c57-3f840a4337a6"),
+                            Id = new Guid("d85b8a2a-9a55-471c-8f26-4f1fb1b1e028"),
                             Code = "Languages",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Diller"
                         },
                         new
                         {
-                            Id = new Guid("5be7ee03-24eb-47fe-84d4-68307f195594"),
+                            Id = new Guid("3414d895-00dc-4497-a8d9-43089b35aa14"),
                             Code = "Languages",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Languages"
                         },
                         new
                         {
-                            Id = new Guid("e4f973a2-e586-421e-afaf-b183ec193e55"),
+                            Id = new Guid("71d3e1af-f440-42dd-ad15-712ac2a4f982"),
                             Code = "TranslateWords",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Dil Çevirileri"
                         },
                         new
                         {
-                            Id = new Guid("87dcabf9-6870-4a32-a09e-144527463db9"),
+                            Id = new Guid("1ac3574e-56e6-4030-ab0c-3e5346bb6038"),
                             Code = "TranslateWords",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Translate Words"
                         },
                         new
                         {
-                            Id = new Guid("c03bec61-7b52-49f3-8501-640fe9b64574"),
+                            Id = new Guid("78398f3a-2ed1-451a-8ba4-38863ea9ca88"),
                             Code = "Management",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Yönetim"
                         },
                         new
                         {
-                            Id = new Guid("3140658e-f9fa-48f8-a62e-bd133e1b7338"),
+                            Id = new Guid("6fe0ea27-2579-43d4-9b1b-1f091307071c"),
                             Code = "Management",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Management"
                         },
                         new
                         {
-                            Id = new Guid("9b0da6ea-034f-4c3e-bdf2-996303bb538d"),
+                            Id = new Guid("42d619fc-0226-4bc0-9703-51b0e30fb183"),
                             Code = "AppMenu",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Uygulama"
                         },
                         new
                         {
-                            Id = new Guid("f0bb88f2-903d-4e20-866a-6b441d555f2b"),
+                            Id = new Guid("97e8e13f-c0f5-4bff-8a09-34e451e1768e"),
                             Code = "AppMenu",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Application"
                         },
                         new
                         {
-                            Id = new Guid("b71c815c-96af-4681-878a-e54a725c8585"),
+                            Id = new Guid("a3deb409-01a8-4dbf-ba87-6556c17a9fa8"),
                             Code = "Added",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Başarıyla Eklendi."
                         },
                         new
                         {
-                            Id = new Guid("83d1bcd5-bc6f-4082-8731-a2c65ffa9b73"),
+                            Id = new Guid("2d1b6120-76ce-418f-9bf2-66739761d306"),
                             Code = "Added",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Successfully Added."
                         },
                         new
                         {
-                            Id = new Guid("c4e6f9a1-8c92-478d-8b18-32cde96c783d"),
+                            Id = new Guid("49f8568c-b912-4eeb-a34d-18359745cd32"),
                             Code = "Updated",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Başarıyla Güncellendi."
                         },
                         new
                         {
-                            Id = new Guid("410be70b-b0fd-49b0-8540-8fd3189055f8"),
+                            Id = new Guid("eeb7c0aa-91af-4e56-b79a-a4276079a8af"),
                             Code = "Updated",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Successfully Updated."
                         },
                         new
                         {
-                            Id = new Guid("732bd376-96e0-41a1-85e8-551dd5a62b3c"),
+                            Id = new Guid("da2c76d5-f31a-4a6f-9817-1026d6d20856"),
                             Code = "Deleted",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Başarıyla Silindi."
                         },
                         new
                         {
-                            Id = new Guid("fbf82790-9e79-4797-a199-159afc9ea980"),
+                            Id = new Guid("17268f46-bb84-402f-aee6-1a6105afd168"),
                             Code = "Deleted",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Successfully Deleted."
                         },
                         new
                         {
-                            Id = new Guid("fed9b57c-6931-4ac7-9f24-dd33746c61d6"),
+                            Id = new Guid("ccc1f256-947f-40d9-95d6-6a85022ebcc6"),
                             Code = "OperationClaimExists",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Bu operasyon izni zaten mevcut."
                         },
                         new
                         {
-                            Id = new Guid("68e50cd6-1e27-44ec-8124-ade1aa0d8dcd"),
+                            Id = new Guid("f2be768d-83ed-4d38-8bde-5ba8b122582e"),
                             Code = "OperationClaimExists",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "This operation permit already exists."
                         },
                         new
                         {
-                            Id = new Guid("4b2a2f97-ad27-4dec-8756-7d362beda395"),
+                            Id = new Guid("249c8d0f-f856-45b6-828b-1d5a971cc4e9"),
                             Code = "StringLengthMustBeGreaterThanThree",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Lütfen En Az 3 Karakterden Oluşan Bir İfade Girin."
                         },
                         new
                         {
-                            Id = new Guid("bf83a360-5b65-4597-b414-c35f8d37afc1"),
+                            Id = new Guid("87cacac4-4b1c-458a-8406-6cf03830e387"),
                             Code = "StringLengthMustBeGreaterThanThree",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Please Enter A Phrase Of At Least 3 Characters."
                         },
                         new
                         {
-                            Id = new Guid("66cba36d-87bf-43e8-b879-0e468b305c89"),
+                            Id = new Guid("ca955d5e-3cc0-4920-802a-706246957f15"),
                             Code = "CouldNotBeVerifyCid",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Kimlik No Doğrulanamadı."
                         },
                         new
                         {
-                            Id = new Guid("306241ba-3f50-4745-be38-595356cc1160"),
+                            Id = new Guid("b0591ee6-c660-4b24-a873-3c5a5ede6253"),
                             Code = "CouldNotBeVerifyCid",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Could not be verify Citizen Id"
                         },
                         new
                         {
-                            Id = new Guid("4325dc8f-cb78-4296-8be2-f9b81dac6b3d"),
+                            Id = new Guid("1a5acc97-fd94-4b39-aa1a-c5382237d9c6"),
                             Code = "VerifyCid",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Kimlik No Doğrulandı."
                         },
                         new
                         {
-                            Id = new Guid("0821831a-6465-440f-ade1-55cb408018cc"),
+                            Id = new Guid("47e7d151-81f7-45cb-8d4c-c52c5ca46181"),
                             Code = "VerifyCid",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Verify Citizen Id"
                         },
                         new
                         {
-                            Id = new Guid("ea01ab9a-7a0c-44b6-85cd-feb9a8cbdb94"),
+                            Id = new Guid("f3dda3d0-b497-4a67-8b9f-eacca55eeb85"),
                             Code = "AuthorizationsDenied",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Yetkiniz olmayan bir alana girmeye çalıştığınız tespit edildi."
                         },
                         new
                         {
-                            Id = new Guid("acdb0ae8-901f-4a9d-99eb-2566fda69e56"),
+                            Id = new Guid("6dbf59ce-da65-4787-9841-7806d157ba96"),
                             Code = "AuthorizationsDenied",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "It has been detected that you are trying to enter an area that you do not have authorization."
                         },
                         new
                         {
-                            Id = new Guid("bf77e8e2-7657-43f3-af25-89b0fc8522b1"),
+                            Id = new Guid("4b696290-e789-4417-b54b-d8711686ef69"),
                             Code = "UserNotFound",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Kimlik Bilgileri Doğrulanamadı. Lütfen Yeni Kayıt Ekranını kullanın."
                         },
                         new
                         {
-                            Id = new Guid("52d81953-5cc7-45f0-bd23-b010a18dc163"),
+                            Id = new Guid("5643f029-af63-47cb-a28a-552e1fc2d9a9"),
                             Code = "UserNotFound",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Credentials Could Not Verify. Please use the New Registration Screen."
                         },
                         new
                         {
-                            Id = new Guid("acb327b1-360b-453b-8413-67dd5b94b79d"),
+                            Id = new Guid("424db20e-e520-4c1c-9294-bbd118142b47"),
                             Code = "PasswordError",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Kimlik Bilgileri Doğrulanamadı, Kullanıcı adı ve/veya parola hatalı."
                         },
                         new
                         {
-                            Id = new Guid("b012a2ce-60e8-49f0-b420-f215b460c17a"),
+                            Id = new Guid("aa8f9fdf-7312-499d-a747-9b9c72cc14b4"),
                             Code = "PasswordError",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Credentials Failed to Authenticate, Username and / or password incorrect."
                         },
                         new
                         {
-                            Id = new Guid("8a1c7d42-b929-443e-8157-f801f787a592"),
+                            Id = new Guid("83609bf3-1c7a-4413-baf7-3e1498b8a5da"),
                             Code = "SuccessfulLogin",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Sisteme giriş başarılı."
                         },
                         new
                         {
-                            Id = new Guid("fd4e82b9-d0a4-437a-9fb8-18b7f077cb33"),
+                            Id = new Guid("67d9f970-77e2-4d19-805c-38d736a7b67c"),
                             Code = "SuccessfulLogin",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Login to the system is successful."
                         },
                         new
                         {
-                            Id = new Guid("70f44a94-85e4-403e-adde-8c21b10f8c4c"),
+                            Id = new Guid("557569b7-573f-499b-9232-f7b67201beff"),
                             Code = "SendMobileCode",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Lütfen Size SMS Olarak Gönderilen Kodu Girin!"
                         },
                         new
                         {
-                            Id = new Guid("30ccab6b-b1f0-4a04-9cc9-80e62e01334c"),
+                            Id = new Guid("445157ff-d072-40cd-9334-e425040d9210"),
                             Code = "SendMobileCode",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Please Enter The Code Sent To You By SMS!"
                         },
                         new
                         {
-                            Id = new Guid("1da2d933-e5ef-42a8-bba0-c8c8346a1437"),
+                            Id = new Guid("744a653c-e632-4667-a277-cab6622ac52f"),
                             Code = "NameAlreadyExist",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Oluşturmaya Çalıştığınız Nesne Zaten Var."
                         },
                         new
                         {
-                            Id = new Guid("f76b2aa2-3979-444d-b2fe-dca218e750ba"),
+                            Id = new Guid("2c8889db-aa43-44d7-b4fc-883597b95956"),
                             Code = "NameAlreadyExist",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "The Object You Are Trying To Create Already Exists."
                         },
                         new
                         {
-                            Id = new Guid("2e762770-1a0d-47ce-a403-7f469afa852b"),
+                            Id = new Guid("7881d53a-19c1-4309-8a0a-82209e5e0d96"),
                             Code = "WrongCID",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Vatandaşlık No Sistemimizde Bulunamadı. Lütfen Yeni Kayıt Oluşturun!"
                         },
                         new
                         {
-                            Id = new Guid("ee682d8e-cb1e-469a-8107-639e8f8b56ab"),
+                            Id = new Guid("ac7da914-10ba-4873-94ed-a22668388315"),
                             Code = "WrongCID",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Citizenship Number Not Found In Our System. Please Create New Registration!"
                         },
                         new
                         {
-                            Id = new Guid("a322344c-21e1-4649-bf25-d8e1f613bf87"),
+                            Id = new Guid("1d117708-24a7-421d-9162-45c5b76ff0d8"),
                             Code = "CID",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Vatandaşlık No"
                         },
                         new
                         {
-                            Id = new Guid("723d3920-7dab-4c76-81ab-485169554b76"),
+                            Id = new Guid("a71c00ff-fd09-4a67-b275-c524e6747842"),
                             Code = "CID",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Citizenship Number"
                         },
                         new
                         {
-                            Id = new Guid("f946d22c-17e9-4ec8-8d2e-f6d82f91f041"),
+                            Id = new Guid("e85b7294-902c-48c3-945e-1972b3f3a479"),
                             Code = "PasswordEmpty",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Parola boş olamaz!"
                         },
                         new
                         {
-                            Id = new Guid("e75a07b3-fd42-4448-ac8f-2a9aae23a6e6"),
+                            Id = new Guid("ef66fbb7-76e4-44a5-841d-18fda8671115"),
                             Code = "PasswordEmpty",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Password can not be empty!"
                         },
                         new
                         {
-                            Id = new Guid("61479139-ad9e-4fc7-ba8c-062aaed11c3b"),
+                            Id = new Guid("ddcdb660-283b-41b8-835f-9ba617009b40"),
                             Code = "PasswordLength",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Minimum 8 Karakter Uzunluğunda Olmalıdır!"
                         },
                         new
                         {
-                            Id = new Guid("6da7a474-ef83-48aa-bcdb-bbc00f7f5502"),
+                            Id = new Guid("da887c58-0ce4-41c0-909a-f30fbb458f0e"),
                             Code = "PasswordLength",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Must be at least 8 characters long! "
                         },
                         new
                         {
-                            Id = new Guid("17ee2827-cb55-4013-8a98-cd16b0b85e33"),
+                            Id = new Guid("ea0757cd-fac8-48de-a44d-710eee9e78d7"),
                             Code = "PasswordUppercaseLetter",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "En Az 1 Büyük Harf İçermelidir!"
                         },
                         new
                         {
-                            Id = new Guid("e6a23e57-34f7-4b23-98ef-039f865a0fcf"),
+                            Id = new Guid("bcdbcf06-1872-471e-a59b-d6639bfde53a"),
                             Code = "PasswordUppercaseLetter",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Must Contain At Least 1 Capital Letter!"
                         },
                         new
                         {
-                            Id = new Guid("fe93699d-e78c-46b1-ba18-24616c4e538d"),
+                            Id = new Guid("7c5164e3-4e00-4e49-b630-0bfc334c2726"),
                             Code = "PasswordLowercaseLetter",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "En Az 1 Küçük Harf İçermelidir!"
                         },
                         new
                         {
-                            Id = new Guid("175ab9ab-040d-4f21-b6d4-e028c7d635d7"),
+                            Id = new Guid("9da21341-0ca5-481c-a0ca-071e62320715"),
                             Code = "PasswordLowercaseLetter",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Must Contain At Least 1 Lowercase Letter!"
                         },
                         new
                         {
-                            Id = new Guid("eb86185f-b4dc-4512-8011-68f666aeb07e"),
+                            Id = new Guid("8b2400bd-186c-4afe-a9f9-c43d05cdcd8e"),
                             Code = "PasswordDigit",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "En Az 1 Rakam İçermelidir!"
                         },
                         new
                         {
-                            Id = new Guid("0d2dea8b-b841-44a2-bf82-854ed0924f56"),
+                            Id = new Guid("2e15c2cf-8f94-493f-af63-50615a823cc5"),
                             Code = "PasswordDigit",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "It Must Contain At Least 1 Digit!"
                         },
                         new
                         {
-                            Id = new Guid("13a3a01e-2c9e-4330-93b6-22e62325920b"),
+                            Id = new Guid("d62439f1-ff7e-476e-84cc-ece5a89d491c"),
                             Code = "PasswordSpecialCharacter",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "En Az 1 Simge İçermelidir!"
                         },
                         new
                         {
-                            Id = new Guid("18a87c90-3e72-4402-b6a5-fcf1ec137b03"),
+                            Id = new Guid("517098c6-f826-4d9a-87bb-3c473be8839a"),
                             Code = "PasswordSpecialCharacter",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Must Contain At Least 1 Symbol!"
                         },
                         new
                         {
-                            Id = new Guid("dbdd5473-104c-4fab-944b-baf43de627d1"),
+                            Id = new Guid("7d55cd3f-cd8d-473b-b689-672ac85b9a7f"),
                             Code = "SendPassword",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Yeni Parolanız E-Posta Adresinize Gönderildi."
                         },
                         new
                         {
-                            Id = new Guid("ae161f8e-0b78-4c19-92b0-c8915e051d84"),
+                            Id = new Guid("651aed63-105b-490d-aee6-dcb277458ccb"),
                             Code = "SendPassword",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Your new password has been sent to your e-mail address."
                         },
                         new
                         {
-                            Id = new Guid("2485d259-f6af-4c3d-ab15-73f9f109e4cd"),
+                            Id = new Guid("a7632a80-bf4d-45ee-866c-2127f4c4f014"),
                             Code = "InvalidCode",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Geçersiz Bir Kod Girdiniz!"
                         },
                         new
                         {
-                            Id = new Guid("3eca76db-4dc4-4e56-9a57-4e2e3771e2d9"),
+                            Id = new Guid("79425b23-2563-4837-8c06-3839ca6f0c15"),
                             Code = "InvalidCode",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "You Entered An Invalid Code!"
                         },
                         new
                         {
-                            Id = new Guid("a616b8f5-f300-455a-80c6-2a59baefd713"),
+                            Id = new Guid("88c33f2c-7936-4d60-903e-cf6521a90c35"),
                             Code = "SmsServiceNotFound",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "SMS Servisine Ulaşılamıyor."
                         },
                         new
                         {
-                            Id = new Guid("d0b2034c-42ae-41d6-b76b-25d5e97634a8"),
+                            Id = new Guid("cb420163-9089-4543-957d-117395c9586a"),
                             Code = "SmsServiceNotFound",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Unable to Reach SMS Service."
                         },
                         new
                         {
-                            Id = new Guid("1dd638d2-33ec-424e-b1c9-5fc0359e721a"),
+                            Id = new Guid("34da00c3-4557-4aa3-a9de-78a3d14e0120"),
                             Code = "TrueButCellPhone",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Bilgiler doğru. Cep telefonu gerekiyor."
                         },
                         new
                         {
-                            Id = new Guid("79f815dd-77ac-4e4b-b5a2-3e9e414fa582"),
+                            Id = new Guid("38983496-d989-4c2c-9028-259aa1baea2e"),
                             Code = "TrueButCellPhone",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "The information is correct. Cell phone is required."
                         },
                         new
                         {
-                            Id = new Guid("0d8e183d-c3d6-4d95-8e4c-94b0c0640f7b"),
+                            Id = new Guid("47669c83-91a1-4807-9b34-d4468c154c78"),
                             Code = "TokenProviderException",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Token Provider boş olamaz!"
                         },
                         new
                         {
-                            Id = new Guid("9c917898-9a44-4589-b44e-9509617a4e4a"),
+                            Id = new Guid("d7804e3f-8af7-49a2-8f93-87b290744266"),
                             Code = "TokenProviderException",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Token Provider cannot be empty!"
                         },
                         new
                         {
-                            Id = new Guid("ac7cb685-8b9d-4355-8354-c15019546c61"),
+                            Id = new Guid("635f3748-6d11-4f3d-9ddc-5ec2b692fb98"),
                             Code = "Unknown",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Bilinmiyor!"
                         },
                         new
                         {
-                            Id = new Guid("a60a627d-f714-4347-b399-227f4188f11d"),
+                            Id = new Guid("ac7c52cb-3940-4274-a8b4-e3637f7a7c65"),
                             Code = "Unknown",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Unknown!"
                         },
                         new
                         {
-                            Id = new Guid("b5987a6c-6583-46af-8edc-5e541283bfe0"),
+                            Id = new Guid("b23af6be-1f70-43c7-8d6b-ab9b3c76ff39"),
                             Code = "NewPassword",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Yeni Parola:"
                         },
                         new
                         {
-                            Id = new Guid("b95900c4-6aba-4932-81a2-dc2ac9ad2075"),
+                            Id = new Guid("aad98b91-ae17-4fec-a6a0-bc5ca9d0e2e5"),
                             Code = "NewPassword",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "New Password:"
                         },
                         new
                         {
-                            Id = new Guid("ce009b40-146b-4378-99b7-19153a024346"),
+                            Id = new Guid("a704d73e-c48a-47a6-84b2-25869ee4514f"),
                             Code = "ChangePassword",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Parola Değiştir"
                         },
                         new
                         {
-                            Id = new Guid("e30886fc-2145-4645-87c9-8dc350b18cc2"),
+                            Id = new Guid("89db034b-620f-4165-9bbf-36ec08e74b80"),
                             Code = "ChangePassword",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Change Password"
                         },
                         new
                         {
-                            Id = new Guid("e2cb61a9-c070-48e6-90dc-d84b117fe5dd"),
+                            Id = new Guid("648cd7c0-ee6c-4cb7-82c3-9d5aeee8548d"),
                             Code = "Save",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Kaydet"
                         },
                         new
                         {
-                            Id = new Guid("bfd88872-cbc6-4f05-9d74-06bca2f3ed3d"),
+                            Id = new Guid("b5c99cb3-0991-4518-a1b2-c20e0980b5b9"),
                             Code = "Save",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Save"
                         },
                         new
                         {
-                            Id = new Guid("71e82a4f-427d-4d60-a65c-a04d8faa1e09"),
+                            Id = new Guid("1dd069de-fb34-4183-9635-2361df53d41f"),
                             Code = "GroupName",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Grup Adı"
                         },
                         new
                         {
-                            Id = new Guid("8f41ccfb-e5c6-4233-b5e4-3cfde0eb696e"),
+                            Id = new Guid("eb9d4f9e-9792-4fb2-ac7a-f42002e62605"),
                             Code = "GroupName",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Group Name"
                         },
                         new
                         {
-                            Id = new Guid("b96944e0-cef0-420b-86bc-7863c9ae9434"),
+                            Id = new Guid("0892e1eb-90b9-46b6-b1eb-e7cf973b317d"),
                             Code = "FullName",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Tam Adı"
                         },
                         new
                         {
-                            Id = new Guid("746963b5-4980-4700-86bc-d319a0e5c967"),
+                            Id = new Guid("fda6bbe7-cedc-4510-a65f-dff4c4a0ce5d"),
                             Code = "FullName",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Full Name"
                         },
                         new
                         {
-                            Id = new Guid("bf603a6d-d225-4156-8f33-61a00e0af3cc"),
+                            Id = new Guid("2ca6023a-bebe-418a-985d-c7527a1ab301"),
                             Code = "Address",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Adres"
                         },
                         new
                         {
-                            Id = new Guid("70f9d16e-f0fe-434a-a222-8f114582165e"),
+                            Id = new Guid("71f8c95d-ebc2-4a46-8c11-02afeb3c01c4"),
                             Code = "Address",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Address"
                         },
                         new
                         {
-                            Id = new Guid("703bb537-fa7f-44a3-aeda-3ded566e44c6"),
+                            Id = new Guid("97897b79-582a-454f-bc35-89ad55137278"),
                             Code = "Notes",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Notlar"
                         },
                         new
                         {
-                            Id = new Guid("c64afa03-92dd-4c1b-a925-ac94ba7efba7"),
+                            Id = new Guid("6a5ffedb-e371-426f-a818-54c069f38db5"),
                             Code = "Notes",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Notes"
                         },
                         new
                         {
-                            Id = new Guid("c7004893-0f89-467a-b6fe-37662f735bf1"),
+                            Id = new Guid("af344899-a908-4f34-a4d7-65f8919e2c62"),
                             Code = "ConfirmPassword",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Parolayı Doğrula"
                         },
                         new
                         {
-                            Id = new Guid("558003bf-4696-40d5-a8ed-9ba1d2d82701"),
+                            Id = new Guid("ea401438-2bec-4269-9198-680cb993d69e"),
                             Code = "ConfirmPassword",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Confirm Password"
                         },
                         new
                         {
-                            Id = new Guid("86501228-939c-4b77-8593-3b0587cdd7dd"),
+                            Id = new Guid("c3180dc9-a42e-4a51-9d1f-6bc0937505bf"),
                             Code = "Code",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Kod"
                         },
                         new
                         {
-                            Id = new Guid("6cf53938-1b61-4c58-b1af-ed85fe0060b1"),
+                            Id = new Guid("33bad072-f068-44ae-bab4-d11841d9e692"),
                             Code = "Code",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Code"
                         },
                         new
                         {
-                            Id = new Guid("0890b6ce-ed6c-4813-870f-c8b22f5e6917"),
+                            Id = new Guid("64e2e8ee-d6d6-4907-960f-9b237671fa8b"),
                             Code = "Alias",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Görünen Ad"
                         },
                         new
                         {
-                            Id = new Guid("8cf00c5a-ad2a-48ad-af9f-90288eda9acd"),
+                            Id = new Guid("1e3740e2-9529-484d-a052-072fcf245d7a"),
                             Code = "Alias",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Alias"
                         },
                         new
                         {
-                            Id = new Guid("bf3a355d-f6cf-4d86-be0a-ff16275cb054"),
+                            Id = new Guid("5c8c66b8-21f0-46d4-a439-db08191cc9a9"),
                             Code = "Description",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Açıklama"
                         },
                         new
                         {
-                            Id = new Guid("6a947e2d-edef-4845-ba08-3196d722ea93"),
+                            Id = new Guid("a3cec195-2e7f-4322-9675-579cf6b34c60"),
                             Code = "Description",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Description"
                         },
                         new
                         {
-                            Id = new Guid("29f273b3-d502-42e0-9f5d-ec6077e305d1"),
+                            Id = new Guid("f0661ce7-ec1f-4fe8-99a5-6fce21c8cb86"),
                             Code = "Value",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Değer"
                         },
                         new
                         {
-                            Id = new Guid("3ea7820d-e7de-45a3-b13c-c4b391d3cbb4"),
+                            Id = new Guid("3bd440fe-a4ed-4696-9957-7ef0b3daecc9"),
                             Code = "Value",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Value"
                         },
                         new
                         {
-                            Id = new Guid("1b05bf77-fff8-4d25-8794-514a00c8f94e"),
+                            Id = new Guid("339efe81-7c42-4030-8d81-9ffc472b0a2a"),
                             Code = "LangCode",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Dil Kodu"
                         },
                         new
                         {
-                            Id = new Guid("8abf87b8-8a43-4cbc-aa65-916d0050a8b3"),
+                            Id = new Guid("5e6d21de-efe4-4e80-bbe0-a97f176a2ee4"),
                             Code = "LangCode",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Lang Code"
                         },
                         new
                         {
-                            Id = new Guid("0854c82f-0028-4035-b6b2-4b9f82fa7447"),
+                            Id = new Guid("40daa094-add4-4680-b9ff-7bdc77ac586c"),
                             Code = "Name",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Adı"
                         },
                         new
                         {
-                            Id = new Guid("e88a145d-cbe0-49c0-a654-2d07a7bf525a"),
+                            Id = new Guid("8c2c8031-7e98-4123-9395-421d880d9bd8"),
                             Code = "Name",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Name"
                         },
                         new
                         {
-                            Id = new Guid("b43c33d5-32d6-4903-ba03-425fe947bbb0"),
+                            Id = new Guid("49f55700-96b0-4e8b-bb1a-c60f530bbc86"),
                             Code = "MobilePhones",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Cep Telefonu"
                         },
                         new
                         {
-                            Id = new Guid("80277a61-bf6c-4eb4-b9fd-46a1bd933472"),
+                            Id = new Guid("3c061a84-225a-4d04-b615-13de986a759c"),
                             Code = "MobilePhones",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Mobile Phone"
                         },
                         new
                         {
-                            Id = new Guid("8c078a6c-8897-4eaa-8f0d-b26e5608a219"),
+                            Id = new Guid("7b383321-aba4-490d-85c7-15a1bca89193"),
                             Code = "NoRecordsFound",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Kayıt Bulunamadı"
                         },
                         new
                         {
-                            Id = new Guid("d18d0dec-2621-4b6c-8ff1-7f3316442ff3"),
+                            Id = new Guid("9ab97f3b-5ab5-4e19-9bb1-53770e1cf3bb"),
                             Code = "NoRecordsFound",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "No Records Found"
                         },
                         new
                         {
-                            Id = new Guid("5b6f85fc-c728-4689-9cce-7cee87283327"),
+                            Id = new Guid("698cc22b-461f-43cd-9b06-7ed0bacb66fe"),
                             Code = "Required",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Bu alan zorunludur!"
                         },
                         new
                         {
-                            Id = new Guid("1d6a9c7f-ae97-4b0d-9cac-deb807127738"),
+                            Id = new Guid("2db9517a-84a2-4f3c-b91d-1306908aa208"),
                             Code = "Required",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "This field is required!"
                         },
                         new
                         {
-                            Id = new Guid("8aaabb13-738d-4b93-bc46-b9ee596bd956"),
+                            Id = new Guid("d53a082b-077f-4905-b4ff-deff3e87f8af"),
                             Code = "Permissions",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Permissions"
                         },
                         new
                         {
-                            Id = new Guid("75a6c940-a341-4838-b2f6-cc851b4a41b1"),
+                            Id = new Guid("afa651bc-b75b-411e-8742-bd89b8b879b7"),
                             Code = "Permissions",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "İzinler"
                         },
                         new
                         {
-                            Id = new Guid("2233452b-652c-4173-93c3-615e1647b222"),
+                            Id = new Guid("341ea206-144f-4a95-8506-4f2eb4daf8b8"),
                             Code = "GroupList",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Grup Listesi"
                         },
                         new
                         {
-                            Id = new Guid("fa7e3ba4-fe3b-4894-8c7b-c45ca5952400"),
+                            Id = new Guid("f3b0e7d4-2c05-470b-ac2e-ecefe9984efa"),
                             Code = "GroupList",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Group List"
                         },
                         new
                         {
-                            Id = new Guid("27d933d6-e2cf-42cb-8562-97d5b819d74f"),
+                            Id = new Guid("fe6fc2b2-b71a-4ea5-8f98-b737f6fb1db0"),
                             Code = "GrupPermissions",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Grup Yetkileri"
                         },
                         new
                         {
-                            Id = new Guid("3db92173-0d31-4922-ba21-514f54bee8b5"),
+                            Id = new Guid("d433767b-a76d-4c4b-8a1b-4b51ec4b8ffc"),
                             Code = "GrupPermissions",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Grup Permissions"
                         },
                         new
                         {
-                            Id = new Guid("c4329a81-8a81-4287-b5eb-623db60248d0"),
+                            Id = new Guid("5af130b7-4179-417e-bdb2-9f529a32689d"),
                             Code = "Add",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Ekle"
                         },
                         new
                         {
-                            Id = new Guid("e6b36020-0656-47f0-897f-330ae436d6e8"),
+                            Id = new Guid("6215c243-883f-4e13-b727-2b01f06963ca"),
                             Code = "Add",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Add"
                         },
                         new
                         {
-                            Id = new Guid("6005aa17-bab0-4762-9d32-58c84aab27f8"),
+                            Id = new Guid("3dd5375f-64fe-473f-a700-9d283d7e794f"),
                             Code = "UserList",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Kullanıcı Listesi"
                         },
                         new
                         {
-                            Id = new Guid("d94081ec-22ea-4427-80ae-b1b3e38d8f67"),
+                            Id = new Guid("7ed7874e-1bf3-40f5-bc79-85491d51de9c"),
                             Code = "UserList",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "User List"
                         },
                         new
                         {
-                            Id = new Guid("fc3dd97a-8bbe-46e0-90ea-667032e03505"),
+                            Id = new Guid("7ea943e5-7b8e-4897-9625-42d80febaade"),
                             Code = "OperationClaimList",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Yetki Listesi"
                         },
                         new
                         {
-                            Id = new Guid("cc9a2f36-78f7-4955-b18e-3ef1140e0f54"),
+                            Id = new Guid("3caf5a5f-b6d2-4cd1-8b67-7bb5eb2426a2"),
                             Code = "OperationClaimList",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "OperationClaim List"
                         },
                         new
                         {
-                            Id = new Guid("545572e0-6c8b-452d-8ae4-2399f983499b"),
+                            Id = new Guid("04e3f431-e371-463b-b007-18590c7bb486"),
                             Code = "LanguageList",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Dil Listesi"
                         },
                         new
                         {
-                            Id = new Guid("356c871c-6fb8-4234-8133-3ff0106ed81b"),
+                            Id = new Guid("9fedbe73-a9a3-4c7d-b93f-a8cdc43f655c"),
                             Code = "LanguageList",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Language List"
                         },
                         new
                         {
-                            Id = new Guid("b16e2a8c-3ebc-43ed-ad7d-aa6f1fa26bd4"),
+                            Id = new Guid("b77d4cc7-5fea-496f-90b8-8818a44f20e0"),
                             Code = "TranslateList",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Dil Çeviri Listesi"
                         },
                         new
                         {
-                            Id = new Guid("05392f6f-2753-4c78-930c-8d78efe5a306"),
+                            Id = new Guid("7ae7e589-f351-4b50-94ad-9575a6c9e6c0"),
                             Code = "TranslateList",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Translate List"
                         },
                         new
                         {
-                            Id = new Guid("d9dc8181-7c40-41f0-a34b-8093c73bff33"),
+                            Id = new Guid("9bb3351d-4b19-487d-901c-44076e68d5f0"),
                             Code = "LogList",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "İşlem Kütüğü"
                         },
                         new
                         {
-                            Id = new Guid("90469c8b-f0a6-4ed0-b2cf-2210456cd30f"),
+                            Id = new Guid("3b45d807-c146-415d-bc4e-78085410247c"),
                             Code = "LogList",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "LogList"
                         },
                         new
                         {
-                            Id = new Guid("acb4782a-3d2e-4958-afae-f786d570b617"),
+                            Id = new Guid("93da597a-5957-4b5e-af6a-64d4e3c61cca"),
                             Code = "DeleteConfirm",
                             LangId = new Guid("00000000-0000-0000-0000-000000000001"),
                             Value = "Emin misiniz?"
                         },
                         new
                         {
-                            Id = new Guid("9b1b85ca-b5d8-4a84-9be0-7be5ad8ab8a6"),
+                            Id = new Guid("2ce3c738-09b5-4b48-b7f9-c7612600645c"),
                             Code = "DeleteConfirm",
                             LangId = new Guid("00000000-0000-0000-0000-000000000002"),
                             Value = "Are you sure?"
@@ -1241,7 +1243,7 @@ namespace DataAccess.Migrations
                     b.Property<DateTime?>("Created")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp without time zone")
-                        .HasDefaultValue(new DateTime(2022, 8, 31, 0, 38, 0, 942, DateTimeKind.Local).AddTicks(2419));
+                        .HasDefaultValue(new DateTime(2022, 8, 31, 0, 29, 33, 763, DateTimeKind.Local).AddTicks(4396));
 
                     b.Property<Guid?>("CreatedBy")
                         .HasColumnType("uuid");
@@ -1289,9 +1291,6 @@ namespace DataAccess.Migrations
 
             modelBuilder.Entity("Core.Entities.Concrete.UserClaim", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uuid");
-
                     b.Property<Guid>("UserId")
                         .HasColumnType("uuid");
 
@@ -1310,7 +1309,10 @@ namespace DataAccess.Migrations
                     b.Property<Guid?>("CreatedBy")
                         .HasColumnType("uuid");
 
-                    b.HasKey("Id", "UserId", "ClaimId");
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("UserId", "ClaimId");
 
                     b.ToTable("UserClaims");
                 });

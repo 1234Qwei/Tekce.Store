@@ -5,6 +5,7 @@ using Core.Utilities.Interceptors;
 using Core.Utilities.IoC;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security;
@@ -43,8 +44,23 @@ namespace Business.BusinessAspects
             var operationName = invocation.TargetType.ReflectedType.Name;
             if (oprClaims.Contains(operationName))
             {
+
+                if (!invocation.MethodInvocationTarget.ReflectedType.Name.ToLower().Contains("create")) { return; }
+                var parameters = invocation.Method.GetParameters();
+                if (invocation.Arguments[0].GetType().GetProperty("CreatedBy") != null)
+                {
+
+                    invocation.Arguments[0].GetType().GetProperty("CreatedBy")?.SetValue(invocation.Arguments[0], new Guid(userId));
+                }
                 return;
             }
+
+
+
+
+
+
+
 
             throw new SecurityException(Messages.AuthorizationsDenied);
         }
