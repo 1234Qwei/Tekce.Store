@@ -28,6 +28,7 @@ namespace Business.Handlers.Users.Commands
         public string Notes { get; set; }
         public DateTime UpdateContactDate { get; set; }
         public string Password { get; set; }
+        public Guid? CreatedBy { get; set; }
 
 
         public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, IResult>
@@ -61,7 +62,8 @@ namespace Business.Handlers.Users.Commands
                     CitizenId = request.CitizenId,
                     Gender = request.Gender,
                     Notes = request.Notes,
-                    MobilePhones = request.MobilePhones
+                    MobilePhones = request.MobilePhones,
+                    CreatedBy=request.CreatedBy
                 };
 
                 _userRepository.Add(user);

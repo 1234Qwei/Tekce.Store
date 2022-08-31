@@ -45,23 +45,30 @@ namespace Business.BusinessAspects
             if (oprClaims.Contains(operationName))
             {
 
-                if (!invocation.MethodInvocationTarget.ReflectedType.Name.ToLower().Contains("create")) { return; }
-                var parameters = invocation.Method.GetParameters();
-                if (invocation.Arguments[0].GetType().GetProperty("CreatedBy") != null)
-                {
+                if (invocation.MethodInvocationTarget.ReflectedType.Name.ToLower().Contains("create") || invocation.MethodInvocationTarget.ReflectedType.Name.ToLower().Contains("update")) {
+                    var parameters = invocation.Method.GetParameters();
+                    if (invocation.Arguments[0].GetType().GetProperty("CreatedBy") != null)
+                    {
 
-                    invocation.Arguments[0].GetType().GetProperty("CreatedBy")?.SetValue(invocation.Arguments[0], new Guid(userId));
+                        invocation.Arguments[0].GetType().GetProperty("CreatedBy")?.SetValue(invocation.Arguments[0], new Guid(userId));
+                    }
+
+                    if (invocation.Arguments[0].GetType().GetProperty("ChangedBy") != null)
+                    {
+
+                        invocation.Arguments[0].GetType().GetProperty("ChangedBy")?.SetValue(invocation.Arguments[0], new Guid(userId));
+                    }
+
+
                 }
+                
+                
+
+               
+
+
                 return;
             }
-
-
-
-
-
-
-
-
             throw new SecurityException(Messages.AuthorizationsDenied);
         }
     }

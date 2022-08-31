@@ -19,6 +19,7 @@ namespace Business.Handlers.GroupClaims.Commands
         public Guid Id { get; set; }
         public Guid GroupId { get; set; }
         public Guid[] ClaimIds { get; set; }
+        public Guid? ChangedBy { get; set; }
 
         public class UpdateGroupClaimCommandHandler : IRequestHandler<UpdateGroupClaimCommand, IResult>
         {
@@ -34,8 +35,7 @@ namespace Business.Handlers.GroupClaims.Commands
             [LogAspect(typeof(FileLogger))]
             public async Task<IResult> Handle(UpdateGroupClaimCommand request, CancellationToken cancellationToken)
             {
-                var list = request.ClaimIds.Select(x => new GroupClaim() { ClaimId = x, GroupId = request.GroupId });
-
+                var list = request.ClaimIds.Select(x => new GroupClaim() { ClaimId = x, GroupId = request.GroupId ,CreatedBy=request.ChangedBy});
                 await _groupClaimRepository.BulkInsert(request.GroupId, list);
                 await _groupClaimRepository.SaveChangesAsync();
 

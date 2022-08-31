@@ -41,7 +41,7 @@ namespace Business.Handlers.Locations.Commands
 
 			[ValidationAspect(typeof(CreateLocationValidator), Priority = 1)]
 			[CacheRemoveAspect("Get")]
-			[LogAspect(typeof(FileLogger))]
+			[LogAspect(typeof(PostgreSqlLogger))]
 			[SecuredOperation(Priority = 1)]
 			public async Task<IResult> Handle(CreateLocationCommand request, CancellationToken cancellationToken)
 			{

@@ -18,6 +18,7 @@ namespace Business.Handlers.Authorizations.Commands
     {
         public string TcKimlikNo { get; set; }
         public string Email { get; set; }
+    
 
         public class ForgotPasswordCommandHandler : IRequestHandler<ForgotPasswordCommand, IResult>
         {
@@ -47,7 +48,6 @@ namespace Business.Handlers.Authorizations.Commands
 
                 var generatedPassword = RandomPassword.CreateRandomPassword(14);
                 HashingHelper.CreatePasswordHash(generatedPassword, out var passwordSalt, out var passwordHash);
-
                 _userRepository.Update(user);
 
                 return new SuccessResult(Messages.SendPassword + Messages.NewPassword + generatedPassword);

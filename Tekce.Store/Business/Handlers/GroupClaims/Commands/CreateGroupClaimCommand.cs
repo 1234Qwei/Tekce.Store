@@ -7,6 +7,7 @@ using Core.Entities.Concrete;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using MediatR;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -15,7 +16,7 @@ namespace Business.Handlers.GroupClaims.Commands
     public class CreateGroupClaimCommand : IRequest<IResult>
     {
         public string ClaimName { get; set; }
-
+        public Guid? CratedBy { get; set; }
         public class CreateGroupClaimCommandHandler : IRequestHandler<CreateGroupClaimCommand, IResult>
         {
             private readonly IOperationClaimRepository _operationClaimRepository;
@@ -37,7 +38,9 @@ namespace Business.Handlers.GroupClaims.Commands
 
                 var operationClaim = new OperationClaim
                 {
-                    Name = request.ClaimName
+                    Name = request.ClaimName,
+                    CreatedBy=request.CratedBy
+                    
                 };
                 _operationClaimRepository.Add(operationClaim);
                 await _operationClaimRepository.SaveChangesAsync();

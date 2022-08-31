@@ -20,6 +20,7 @@ namespace Business.Handlers.Users.Commands
         public string MobilePhones { get; set; }
         public string Address { get; set; }
         public string Notes { get; set; }
+        public Guid? ChangedBy { get; set; }
 
         public class UpdateUserCommandHandler : IRequestHandler<UpdateUserCommand, IResult>
         {
@@ -43,7 +44,7 @@ namespace Business.Handlers.Users.Commands
                 isThereAnyUser.MobilePhones = request.MobilePhones;
                 isThereAnyUser.Address = request.Address;
                 isThereAnyUser.Notes = request.Notes;
-
+                isThereAnyUser.ChangedBy = request.ChangedBy;
                 _userRepository.Update(isThereAnyUser);
                 await _userRepository.SaveChangesAsync();
                 return new SuccessResult(Messages.Updated);

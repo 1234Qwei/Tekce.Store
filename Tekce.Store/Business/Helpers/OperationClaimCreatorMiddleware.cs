@@ -31,8 +31,8 @@ namespace Business.Helpers
             {
                 
                 FullName = "System Admin",
-                Password = "Q1w212*_*",
-                Email = "admin@adminmail.com",
+                Password = "tekce2021.",
+                Email = "admin@tekcee.com",
                 Id=System.Guid.Empty
             });
             await mediator.Send(new CreateUserClaimsInternalCommand
