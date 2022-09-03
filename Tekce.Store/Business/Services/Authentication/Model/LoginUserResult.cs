@@ -28,5 +28,6 @@
         /// List of registered phone numbers for users in the system.
         /// </summary>
         public string[] MobilePhones { get; set; }
+
     }
 }

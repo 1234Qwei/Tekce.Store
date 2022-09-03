@@ -18,6 +18,7 @@ using System;
 using System.Globalization;
 using System.IO;
 using System.Text.Json.Serialization;
+using ConfigurationManager = Business.ConfigurationManager;
 
 namespace WebAPI
 {
@@ -109,7 +110,7 @@ namespace WebAPI
             switch (configurationManager.Mode)
             {
                 case ApplicationMode.Development:
-                    app.UseDbFakeDataCreator();
+                    _=app.UseDbFakeDataCreator();
                     break;
 
                 case ApplicationMode.Profiling:

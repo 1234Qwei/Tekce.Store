@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Core.Entities.Concrete;
+using Core.Entities.Dtos;
+using System;
 using System.Collections.Generic;
 
 namespace Core.Utilities.Security.Jwt

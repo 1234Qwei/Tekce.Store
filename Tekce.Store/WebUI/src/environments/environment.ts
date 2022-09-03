@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   appVersion: 'v8.1.2',
   USERDATA_KEY: 'authf649fc9a5f55',
-  isMockEnabled: true,
+  isMockEnabled: false,
   apiUrl: 'https://localhost:5001/api',
   appThemeName: 'Metronic',
   appPurchaseUrl: 'https://1.envato.market/EA4JP',

@@ -1,8 +1,11 @@
-﻿using Business.Constants;
+﻿using AutoMapper;
+using Business.Constants;
 using Business.Services.Authentication;
 using Core.Aspects.Autofac.Logging;
 using Core.CrossCuttingConcerns.Caching;
 using Core.CrossCuttingConcerns.Logging.Serilog.Loggers;
+using Core.Entities.Concrete;
+using Core.Entities.Dtos;
 using Core.Utilities.Results;
 using Core.Utilities.Security.Hashing;
 using Core.Utilities.Security.Jwt;
@@ -26,13 +29,15 @@ namespace Business.Handlers.Authorizations.Queries
             private readonly ITokenHelper _tokenHelper;
             private readonly IMediator _mediator;
             private readonly ICacheManager _cacheManager;
+            private readonly IMapper mapper;
 
-            public LoginUserQueryHandler(IUserRepository userRepository, ITokenHelper tokenHelper, IMediator mediator, ICacheManager cacheManager)
+            public LoginUserQueryHandler(IUserRepository userRepository, ITokenHelper tokenHelper, IMediator mediator, ICacheManager cacheManager, IMapper mapper)
             {
                 _userRepository = userRepository;
                 _tokenHelper = tokenHelper;
                 _mediator = mediator;
                 _cacheManager = cacheManager;
+                this.mapper = mapper;
             }
 
             [LogAspect(typeof(PostgreSqlLogger))]
@@ -49,18 +54,13 @@ namespace Business.Handlers.Authorizations.Queries
                 {
                     return new ErrorDataResult<AccessToken>(Messages.PasswordError);
                 }
-
                 var claims = _userRepository.GetClaims(user.Id);
-
                 var accessToken = _tokenHelper.CreateToken<DArchToken>(user);
                 accessToken.Claims = claims.Select(x => x.Name).ToList();
-
                 user.RefreshToken = accessToken.RefreshToken;
                 _userRepository.Update(user);
                 await _userRepository.SaveChangesAsync();
-
                 _cacheManager.Add($"{CacheKeys.UserIdForClaim}={user.Id}", claims.Select(x => x.Name));
-
                 return new SuccessDataResult<AccessToken>(accessToken, Messages.SuccessfulLogin);
             }
         }

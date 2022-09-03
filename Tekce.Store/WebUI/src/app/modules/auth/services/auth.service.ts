@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
 import { AuthHTTPService } from './auth-http/auth-http.service';
 
-export type UserType = UserModel | undefined;
+export type User = UserModel | undefined;
 
 @Injectable({
   providedIn: 'root',
@@ -22,16 +22,16 @@ export class AuthService implements OnDestroy {
   private authLocalStorageToken = `${environment.appVersion}-${environment.USERDATA_KEY}`;
 
   // public fields
-  currentUser$: Observable<UserType>;
+  currentUser$: Observable<User>;
   isLoading$: Observable<boolean>;
-  currentUserSubject: BehaviorSubject<UserType>;
+  currentUserSubject: BehaviorSubject<User>;
   isLoadingSubject: BehaviorSubject<boolean>;
 
-  get currentUserValue(): UserType {
+  get currentUserValue(): User {
     return this.currentUserSubject.value;
   }
 
-  set currentUserValue(user: UserType) {
+  set currentUserValue(user: User) {
     this.currentUserSubject.next(user);
   }
 
@@ -40,16 +40,14 @@ export class AuthService implements OnDestroy {
     private router: Router
   ) {
     this.isLoadingSubject = new BehaviorSubject<boolean>(false);
-    this.currentUserSubject = new BehaviorSubject<UserType>(undefined);
+    this.currentUserSubject = new BehaviorSubject<User>(undefined);
     this.currentUser$ = this.currentUserSubject.asObservable();
     this.isLoading$ = this.isLoadingSubject.asObservable();
     const subscr = this.getUserByToken().subscribe();
     this.unsubscribe.push(subscr);
   }
-
   // public methods
-  login(email: string, password: string): Observable<UserType> {
-    debugger;
+  login(email: string, password: string): Observable<User> {
     this.isLoadingSubject.next(true);
     return this.authHttpService.login(email, password).pipe(
       map((auth: AuthModel) => {
@@ -84,17 +82,15 @@ export class AuthService implements OnDestroy {
     // this.userName = decode[propUserName];
   }
 
-  getUserByToken(): Observable<UserType> {
-    debugger;
+  getUserByToken(): Observable<User> {
     const auth = this.getAuthFromLocalStorage();
 
     if (!auth || !auth.data) {
       return of(undefined);
     }
-    var ss = this.decodeToken(auth.data.token);
     this.isLoadingSubject.next(true);
     return this.authHttpService.getUserByToken(auth.data.token).pipe(
-      map((user: UserType) => {
+      map((user: User) => {
         if (user) {
           this.currentUserSubject.next(user);
         } else {

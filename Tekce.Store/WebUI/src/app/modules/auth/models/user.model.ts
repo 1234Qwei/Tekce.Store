@@ -6,11 +6,16 @@ export class UserModel extends AuthModel {
   id: number;
   username: string;
   password: string;
-  fullname: string;
+  fullName: string;
   email: string;
+  mobilePhones: string;
   pic: string;
   roles: number[] = [];
+  notes: string;
+  gender: number;
   occupation: string;
+  status: boolean;
+  refreshToken: string;
   companyName: string;
   phone: string;
   address?: AddressModel;
@@ -53,7 +58,7 @@ export class UserModel extends AuthModel {
     this.id = user.id;
     this.username = user.username || '';
     this.password = user.password || '';
-    this.fullname = user.fullname || '';
+    this.fullName = user.fullName || '';
     this.email = user.email || '';
     this.pic = user.pic || './assets/media/avatars/blank.png';
     this.roles = user.roles || [];

@@ -22,13 +22,7 @@ import { AsideMenuComponent } from './components/aside/aside-menu/aside-menu.com
 import { TopbarComponent } from './components/topbar/topbar.component';
 import { PageTitleComponent } from './components/header/page-title/page-title.component';
 import { HeaderMenuComponent } from './components/header/header-menu/header-menu.component';
-import {
-  DrawersModule,
-  DropdownMenusModule,
-  ModalsModule,
-  EngagesModule,
-} from '../partials';
-import { EngagesComponent } from '../partials/layout/engages/engages.component';
+import { DropdownMenusModule, ModalsModule } from '../partials';
 import { ThemeModeModule } from '../partials/layout/theme-mode-switcher/theme-mode.module';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { SidebarLogoComponent } from './components/sidebar/sidebar-logo/sidebar-logo.component';
@@ -62,7 +56,6 @@ const routes: Routes = [
     TopbarComponent,
     PageTitleComponent,
     HeaderMenuComponent,
-    EngagesComponent,
     SidebarComponent,
     SidebarLogoComponent,
     SidebarMenuComponent,
@@ -83,12 +76,10 @@ const routes: Routes = [
     NgbProgressbarModule,
     ExtrasModule,
     ModalsModule,
-    DrawersModule,
-    EngagesModule,
     DropdownMenusModule,
     NgbTooltipModule,
     TranslateModule,
-    ThemeModeModule
+    ThemeModeModule,
   ],
   exports: [RouterModule],
 })

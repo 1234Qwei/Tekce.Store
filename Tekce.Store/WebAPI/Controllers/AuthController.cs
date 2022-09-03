@@ -1,6 +1,7 @@
 ﻿using Business.Handlers.Authorizations.Commands;
 using Business.Handlers.Authorizations.Queries;
 using Business.Handlers.Users.Commands;
+using Core.Entities.Dtos;
 using Core.Utilities.Results;
 using Core.Utilities.Security.Jwt;
 using Microsoft.AspNetCore.Authorization;
@@ -8,6 +9,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using System.Threading.Tasks;
+using IResult = Core.Utilities.Results.IResult;
 
 namespace WebAPI.Controllers
 {
@@ -136,6 +138,22 @@ namespace WebAPI.Controllers
             var token = new JwtHelper(_configuration).DecodeToken(auth);
 
             return Ok(token);
+        }
+
+        /// <summary>
+        /// GetUser
+        /// </summary>
+        /// <returns></returns>
+        [Consumes("application/json")]
+        [Produces("application/json", "text/plain")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(UserDto))]
+        [HttpGet("Me")]
+        public async Task<IActionResult> Me()
+        {
+            return GetResponseOnlyResultData(await Mediator.Send(new LoggedUserQuery()));
+
+
+
         }
     }
 }

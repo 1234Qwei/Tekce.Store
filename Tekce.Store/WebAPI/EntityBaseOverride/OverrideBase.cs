@@ -14,7 +14,8 @@ namespace WebAPI.EntityBaseOverride
         ///
         /// </summary>
         /// <param name="annotationCodeGenerator"></param>
-        /// <param name="cSharpHelper"></param>
+        /// <param name="CSharpHelper"></param>
+
         public OverrideBase(IAnnotationCodeGenerator annotationCodeGenerator, ICSharpHelper CSharpHelper)
             : base(annotationCodeGenerator, CSharpHelper)
         {
@@ -27,16 +28,15 @@ namespace WebAPI.EntityBaseOverride
         /// <param name="namespace"></param>
         /// <param name="useDataAnnotations"></param>
         /// <returns></returns>
-        public override string WriteCode(IEntityType entityType, string @namespace, bool useDataAnnotations)
+        public override string WriteCode(IEntityType entityType, string @namespace, bool useDataAnnotations, bool useNullableReferenceTypes)
         {
-            
-            var str = base.WriteCode(entityType, @namespace, useDataAnnotations).Replace(
-                "public partial class " + entityType.Name, "public class " + entityType.Name + " : IEntity");
+            var str = base.WriteCode(entityType, @namespace, useDataAnnotations, useNullableReferenceTypes)
+           .Replace(
+           "public partial class " + entityType.Name, "public class " + entityType.Name + " : BaseEntity");
             var oldValue = "using System;";
             var newValue = oldValue + Environment.NewLine + "using Core.Entities;";
             return str.Replace(oldValue, newValue);
         }
-        
-        
+
     }
 }
