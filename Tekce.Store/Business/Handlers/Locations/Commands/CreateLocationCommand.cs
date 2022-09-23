@@ -52,7 +52,7 @@ namespace Business.Handlers.Locations.Commands
 					Type = request.Type,
 					Name = request.Name,
 					Created=DateTime.Now,
-					CreatedBy=request.CreatedBy
+					CreatedById =request.CreatedBy
 
 				};
 

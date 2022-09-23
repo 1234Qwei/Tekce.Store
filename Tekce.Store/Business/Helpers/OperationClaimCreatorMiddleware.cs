@@ -30,7 +30,8 @@ namespace Business.Helpers
             var user = await mediator.Send(new RegisterUserInternalCommand
             {
                 
-                FullName = "System Admin",
+                FirstName = "System",
+                LastName= "Admin",
                 Password = "tekce2021.",
                 Email = "admin@tekcee.com",
                 Id=System.Guid.Empty

@@ -19,7 +19,8 @@ namespace Business.Handlers.Authorizations.Commands
     {
         public string Email { get; set; }
         public string Password { get; set; }
-        public string FullName { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
 
 
         public class RegisterUserCommandHandler : IRequestHandler<RegisterUserCommand, IResult>
@@ -51,7 +52,8 @@ namespace Business.Handlers.Authorizations.Commands
                 {
                     Email = request.Email,
 
-                    FullName = request.FullName,
+                    FirstName = request.FirstName,
+                    LastName = request.LastName,
                     PasswordHash = passwordHash,
                     PasswordSalt = passwordSalt,
                     Status = true

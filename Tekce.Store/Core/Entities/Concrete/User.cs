@@ -11,30 +11,17 @@ namespace Core.Entities.Concrete
         }
 
         public long CitizenId { get; set; }
-        public string FullName { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public string Email { get; set; }
         public string RefreshToken { get; set; }
-        public string MobilePhones { get; set; }
-        public bool Status { get; set; }
-        public DateTime BirthDate { get; set; }
+        public string PhoneNumber { get; set; }
+        public bool? Status { get; set; }
+        public DateTime? BirthDate { get; set; }
         public int Gender { get; set; }
-        public string Address { get; set; }
-        public string Notes { get; set; }
         [NotMapped]
         public string AuthenticationProviderType { get; set; } = "Person";
-
         public byte[] PasswordSalt { get; set; }
         public byte[] PasswordHash { get; set; }
-
-        public bool UpdateMobilePhone(string mobilePhone)
-        {
-            if (mobilePhone == MobilePhones)
-            {
-                return false;
-            }
-
-            MobilePhones = mobilePhone;
-            return true;
-        }
     }
 }

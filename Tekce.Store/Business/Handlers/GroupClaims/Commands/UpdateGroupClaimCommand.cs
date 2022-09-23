@@ -35,7 +35,7 @@ namespace Business.Handlers.GroupClaims.Commands
             [LogAspect(typeof(FileLogger))]
             public async Task<IResult> Handle(UpdateGroupClaimCommand request, CancellationToken cancellationToken)
             {
-                var list = request.ClaimIds.Select(x => new GroupClaim() { ClaimId = x, GroupId = request.GroupId ,CreatedBy=request.ChangedBy});
+                var list = request.ClaimIds.Select(x => new GroupClaim() { ClaimId = x, GroupId = request.GroupId ,CreatedById =request.ChangedBy});
                 await _groupClaimRepository.BulkInsert(request.GroupId, list);
                 await _groupClaimRepository.SaveChangesAsync();
 

@@ -18,7 +18,8 @@ namespace Business.Fakes.Handlers.Authorizations
         public Guid? Id { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public string FullName { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
 
 
         public class RegisterUserInternalCommandHandler : IRequestHandler<RegisterUserInternalCommand, IResult>
@@ -48,7 +49,8 @@ namespace Business.Fakes.Handlers.Authorizations
                 {
                     Email = request.Email,
                     Id=request.Id??Guid.NewGuid(),
-                    FullName = request.FullName,
+                    FirstName = request.FirstName,
+                    LastName = request.LastName,
                     PasswordHash = passwordHash,
                     PasswordSalt = passwordSalt,
                     Status = true

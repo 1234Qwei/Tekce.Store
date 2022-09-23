@@ -53,7 +53,7 @@ namespace Business.Handlers.Locations.Commands
 				isThereLocationRecord.Name = request.Name;
 				isThereLocationRecord.Type = request.Type;
 				isThereLocationRecord.Pid = request.Pid;
-				isThereLocationRecord.ChangedBy = request.ChangedBy;
+				isThereLocationRecord.ChangedById = request.ChangedBy;
 				isThereLocationRecord.Changed = DateTime.Now;
 
 

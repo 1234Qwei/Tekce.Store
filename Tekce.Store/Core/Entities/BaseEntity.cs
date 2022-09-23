@@ -1,16 +1,19 @@
-﻿using System;
+﻿using Core.Entities.Concrete;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace Core.Entities
 {
+#nullable enable
     public class BaseEntity : IEntity
     {
-        [Key]
         public Guid Id { get; set; }
-        public  Guid? CreatedBy { get; set; }
-        public  DateTime? Created { get; set; }
-        public  Guid? ChangedBy { get; set; }
-        public  DateTime? Changed { get; set; }
+        public Guid? CreatedById { get; set; }
+        public User? CreatedBy { get; set; }
+        public DateTime? Created { get; set; }
+        public Guid? ChangedById { get; set; }
+        public User? ChangedBy { get; set; }
+        public DateTime? Changed { get; set; }
     }
     public class BaseDto : IDto
     {

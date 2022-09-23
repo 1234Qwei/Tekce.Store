@@ -8,6 +8,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using Tekce.TableFilter;
+using Tekce.TableFilter.Models;
 
 namespace Core.DataAccess.EntityFramework
 {
@@ -159,7 +161,6 @@ namespace Core.DataAccess.EntityFramework
 
             return result;
         }
-
         public async Task<int> GetCountAsync(Expression<Func<TEntity, bool>> expression = null)
         {
             if (expression == null)
@@ -171,10 +172,21 @@ namespace Core.DataAccess.EntityFramework
                 return await Context.Set<TEntity>().CountAsync(expression);
             }
         }
-
         public int GetCount(Expression<Func<TEntity, bool>> expression = null)
         {
             return expression == null ? Context.Set<TEntity>().Count() : Context.Set<TEntity>().Count(expression);
+        }
+        public async Task<DataSourceResult<TEntity>> DataSourceAsync(TableFilterModel filter)
+        {
+            var data = await Context.Set<TEntity>().AsQueryable().PrimengTableFilter(filter, out int totalRecord).ToListAsync();
+            return new DataSourceResult<TEntity> { Data = data, Total = totalRecord };
+        }
+
+        public  DataSourceResult<TEntity> DataSource(TableFilterModel filter)
+        {
+            var data =  Context.Set<TEntity>().AsQueryable().PrimengTableFilter(filter, out int totalRecord).ToList();
+            return new DataSourceResult<TEntity> { Data = data, Total = totalRecord };
+
         }
     }
 }

@@ -39,7 +39,7 @@ namespace Business.Services.Authentication
 
             if (command.IsPhoneValid)
             {
-                return await PrepareOneTimePassword(AuthenticationProviderType.Person, user.MobilePhones, user.CitizenId.ToString());
+                return await PrepareOneTimePassword(AuthenticationProviderType.Person, user.PhoneNumber, user.CitizenId.ToString());
             }
 
             return new LoginUserResult
@@ -47,7 +47,7 @@ namespace Business.Services.Authentication
                 Message = Messages.TrueButCellPhone,
 
                 Status = LoginUserResult.LoginStatus.PhoneNumberRequired,
-                MobilePhones = new string[] { user.MobilePhones }
+                MobilePhones = new string[] { user.PhoneNumber }
             };
         }
 

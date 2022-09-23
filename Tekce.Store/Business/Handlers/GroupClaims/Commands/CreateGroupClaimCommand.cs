@@ -16,7 +16,7 @@ namespace Business.Handlers.GroupClaims.Commands
     public class CreateGroupClaimCommand : IRequest<IResult>
     {
         public string ClaimName { get; set; }
-        public Guid? CratedBy { get; set; }
+        public Guid? CratedById { get; set; }
         public class CreateGroupClaimCommandHandler : IRequestHandler<CreateGroupClaimCommand, IResult>
         {
             private readonly IOperationClaimRepository _operationClaimRepository;
@@ -39,8 +39,8 @@ namespace Business.Handlers.GroupClaims.Commands
                 var operationClaim = new OperationClaim
                 {
                     Name = request.ClaimName,
-                    CreatedBy=request.CratedBy
-                    
+                    CreatedById=request.CratedById
+
                 };
                 _operationClaimRepository.Add(operationClaim);
                 await _operationClaimRepository.SaveChangesAsync();

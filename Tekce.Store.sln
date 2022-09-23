@@ -3,15 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32819.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "Tekce.Store\WebAPI\WebAPI.csproj", "{DB078992-C311-4C86-B929-CD4D653BAAA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI", "Tekce.Store\WebAPI\WebAPI.csproj", "{DB078992-C311-4C86-B929-CD4D653BAAA6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Tekce.Store\Business\Business.csproj", "{A6E8C239-13AD-4F5D-A1ED-94413EC0256E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Tekce.Store\Business\Business.csproj", "{A6E8C239-13AD-4F5D-A1ED-94413EC0256E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "Tekce.Store\DataAccess\DataAccess.csproj", "{05A3CDDC-5698-4E7D-A5C3-34D81C2561D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "Tekce.Store\DataAccess\DataAccess.csproj", "{05A3CDDC-5698-4E7D-A5C3-34D81C2561D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Tekce.Store\Core\Core.csproj", "{2B84EDAA-7489-4E6C-86D5-0A6C70D28C1C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Tekce.Store\Core\Core.csproj", "{2B84EDAA-7489-4E6C-86D5-0A6C70D28C1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Tekce.Store\Entities\Entities.csproj", "{FEB5EE0C-20D3-40E2-B384-FD32F3E1872E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Tekce.Store\Entities\Entities.csproj", "{FEB5EE0C-20D3-40E2-B384-FD32F3E1872E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extentions", "Extentions", "{FAD1D1E2-B63D-48A8-AA8B-3F923666D812}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tekce.PrimeNgFilter", "Tekce.Store\Extentions\PrimeNgFilter\Tekce.PrimeNgFilter.csproj", "{74BAD157-734C-46E1-88FD-22388124F0C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebUI", "WebUI\WebUI.csproj", "{82F12127-FB16-42AA-B45F-35548577B96A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,9 +45,20 @@ Global
 		{FEB5EE0C-20D3-40E2-B384-FD32F3E1872E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEB5EE0C-20D3-40E2-B384-FD32F3E1872E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEB5EE0C-20D3-40E2-B384-FD32F3E1872E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74BAD157-734C-46E1-88FD-22388124F0C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74BAD157-734C-46E1-88FD-22388124F0C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74BAD157-734C-46E1-88FD-22388124F0C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74BAD157-734C-46E1-88FD-22388124F0C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82F12127-FB16-42AA-B45F-35548577B96A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82F12127-FB16-42AA-B45F-35548577B96A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82F12127-FB16-42AA-B45F-35548577B96A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82F12127-FB16-42AA-B45F-35548577B96A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{74BAD157-734C-46E1-88FD-22388124F0C8} = {FAD1D1E2-B63D-48A8-AA8B-3F923666D812}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7A509265-B20E-4B09-978C-0D4C4124FF3C}

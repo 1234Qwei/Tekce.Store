@@ -4,11 +4,12 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace DataAccess.Concrete.Configurations
 {
-    public class UserGroupEntityConfiguration : IEntityTypeConfiguration<UserGroup>
+    public class UserGroupEntityConfiguration : BaseConfiguration<UserGroup>
     {
-        public void Configure(EntityTypeBuilder<UserGroup> builder)
+        public override void Configure(EntityTypeBuilder<UserGroup> builder)
         {
             builder.HasKey(x => new { x.UserId, x.GroupId });
+            base.Configure(builder);
         }
     }
 }

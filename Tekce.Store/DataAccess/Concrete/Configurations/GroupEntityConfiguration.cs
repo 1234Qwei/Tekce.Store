@@ -8,7 +8,6 @@ namespace DataAccess.Concrete.Configurations
         public override void Configure(EntityTypeBuilder<Group> builder)
         {
             builder.Property(x => x.GroupName).HasMaxLength(50).IsRequired();
-
             base.Configure(builder);
         }
     }

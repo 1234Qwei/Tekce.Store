@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using Tekce.TableFilter.Models;
 
 namespace Core.DataAccess
 {
@@ -29,6 +30,9 @@ namespace Core.DataAccess
 
         Task<int> GetCountAsync(Expression<Func<T, bool>> expression = null);
         int GetCount(Expression<Func<T, bool>> expression = null);
-    
+
+        Task<DataSourceResult<T>> DataSourceAsync(TableFilterModel filter);
+        DataSourceResult<T> DataSource(TableFilterModel filter);
+
     }
 }

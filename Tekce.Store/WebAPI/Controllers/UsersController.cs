@@ -105,5 +105,15 @@ namespace WebAPI.Controllers
         {
             return GetResponseOnlyResultMessage(await Mediator.Send(deleteUser));
         }
-    }
+        /// <summary>
+        /// Get User DataSource
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns>DataSource</returns>
+        [HttpPost("Datasource")]
+        public async Task<IActionResult> DataSource([FromBody] GetUserDataSource filter)
+        {
+            return GetResponseOnlyResultData(await Mediator.Send(filter));
+        }
+    } 
 }

@@ -9,9 +9,8 @@
     <RepositoryUrl>https://github.com/Kusumoto/Tekce.TableFilter</RepositoryUrl>
     <Version>2.1.1</Version>
     <PackageVersion>2.1.1</PackageVersion>
-    <TargetFrameworks>net462;netstandard2.1;net6.0;net5.0</TargetFrameworks>
+    <TargetFrameworks>net6.0;</TargetFrameworks>
 	<CheckEolTargetFramework>false</CheckEolTargetFramework>
-    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <AssemblyVersion>2.1.0</AssemblyVersion>
     <FileVersion>2.1.0</FileVersion>
     <Copyright>2021 Copyright by Weerayut Hongsa</Copyright>
@@ -22,12 +21,6 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.2.13" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\LICENSE.md">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.2.20" />
   </ItemGroup>
 </Project>

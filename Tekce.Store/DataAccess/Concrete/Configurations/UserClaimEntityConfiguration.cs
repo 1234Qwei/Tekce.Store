@@ -4,11 +4,12 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace DataAccess.Concrete.Configurations
 {
-    public class UserClaimEntityConfiguration : IEntityTypeConfiguration<UserClaim>
+    public class UserClaimEntityConfiguration : BaseConfiguration<UserClaim>
     {
-        public void Configure(EntityTypeBuilder<UserClaim> builder)
+        public override void Configure(EntityTypeBuilder<UserClaim> builder)
         {
             builder.HasKey(x => new { x.Id ,x.UserId,x.ClaimId});
+            base.Configure(builder);
         }
     }
 }

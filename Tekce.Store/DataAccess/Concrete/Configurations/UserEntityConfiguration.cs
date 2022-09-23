@@ -5,23 +5,21 @@ using System;
 
 namespace DataAccess.Concrete.Configurations
 {
-    public class UserEntityConfiguration : IEntityTypeConfiguration<User>
+    public class UserEntityConfiguration : BaseConfiguration<User>
     {
-        public void Configure(EntityTypeBuilder<User> builder)
+        public override void Configure(EntityTypeBuilder<User> builder)
         {
-            builder.HasKey(x => x.Id);
+            base.Configure(builder);
             builder.Property(x => x.CitizenId).IsRequired();
-            builder.Property(x => x.FullName).HasMaxLength(100).IsRequired();
+            builder.Property(x => x.FirstName).HasMaxLength(50).IsRequired();
+            builder.Property(x => x.LastName).HasMaxLength(50).IsRequired();
             builder.Property(x => x.Email).HasMaxLength(50);
             builder.Property(x => x.Status).IsRequired();
             builder.Property(x => x.BirthDate);
             builder.Property(x => x.Gender);
-            builder.Property(x => x.Address).HasMaxLength(200);
-            builder.Property(x => x.MobilePhones).HasMaxLength(30);
-            builder.Property(x => x.Notes).HasMaxLength(500);
+            builder.Property(x => x.PhoneNumber).HasMaxLength(30);
             builder.HasIndex(x => x.CitizenId);
-            builder.HasIndex(x => x.MobilePhones);
-            builder.Property(x => x.Created).HasDefaultValue(DateTime.Now);
+            builder.HasIndex(x => x.PhoneNumber);
         }
     }
 }

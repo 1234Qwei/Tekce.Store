@@ -15,18 +15,15 @@ namespace Business.Handlers.Users.Commands
 {
     public class CreateUserCommand : IRequest<IResult>
     {
-        public Guid UserId { get; set; }
+        public Guid? Id { get; set; }
         public long CitizenId { get; set; }
-        public string FullName { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public string Email { get; set; }
-        public string MobilePhones { get; set; }
-        public bool Status { get; set; }
-        public DateTime BirthDate { get; set; }
+        public string PhoneNumber { get; set; }
+        public bool? Status { get; set; }
+        public DateTime? BirthDate { get; set; }
         public int Gender { get; set; }
-        public DateTime RecordDate { get; set; }
-        public string Address { get; set; }
-        public string Notes { get; set; }
-        public DateTime UpdateContactDate { get; set; }
         public string Password { get; set; }
         public Guid? CreatedBy { get; set; }
 
@@ -55,15 +52,15 @@ namespace Business.Handlers.Users.Commands
                 var user = new User
                 {
                     Email = request.Email,
-                    FullName = request.FullName,
+                    FirstName = request.FirstName,
+                    LastName= request.LastName,
                     Status = true,
-                    Address = request.Address,
                     BirthDate = request.BirthDate,
                     CitizenId = request.CitizenId,
                     Gender = request.Gender,
-                    Notes = request.Notes,
-                    MobilePhones = request.MobilePhones,
-                    CreatedBy=request.CreatedBy
+                    PhoneNumber = request.PhoneNumber,
+                    CreatedById =request.CreatedBy,
+                    Id = request.Id ?? new Guid()
                 };
 
                 _userRepository.Add(user);

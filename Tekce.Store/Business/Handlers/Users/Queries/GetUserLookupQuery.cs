@@ -30,8 +30,8 @@ namespace Business.Handlers.Users.Queries
             [LogAspect(typeof(FileLogger))]
             public async Task<IDataResult<IEnumerable<SelectionItem>>> Handle(GetUserLookupQuery request, CancellationToken cancellationToken)
             {
-                var list = await _userRepository.GetListAsync(x => x.Status);
-                var userLookup = list.Select(x => new SelectionItem() { Id = x.Id.ToString(), Label = x.FullName });
+                var list = await _userRepository.GetListAsync(x => x.Status.HasValue&&x.Status.Value);
+                var userLookup = list.Select(x => new SelectionItem() { Id = x.Id.ToString(), Label = x.FirstName+ " "+x.LastName });
                 return new SuccessDataResult<IEnumerable<SelectionItem>>(userLookup);
             }
         }

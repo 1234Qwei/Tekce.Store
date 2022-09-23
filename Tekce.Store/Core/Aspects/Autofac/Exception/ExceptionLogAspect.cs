@@ -34,9 +34,7 @@ namespace Core.Aspects.Autofac.Exception
         {
             var logDetailWithException = GetLogDetail(invocation);
 
-            logDetailWithException.ExceptionMessage = e is System.Exception
-                ? string.Join(Environment.NewLine, (e as AggregateException).InnerExceptions.Select(x => x.Message))
-                : e.Message;
+            logDetailWithException.ExceptionMessage = e.Message;
             _loggerServiceBase.Error(JsonConvert.SerializeObject(logDetailWithException));
         }
 
@@ -52,6 +50,7 @@ namespace Core.Aspects.Autofac.Exception
             var logDetailWithException = new LogDetailWithException
             {
                 MethodName = invocation.Method.Name,
+                ExceptionMessage = "",
                 Parameters = logParameters,
                 User = (_httpContextAccessor.HttpContext == null ||
                         _httpContextAccessor.HttpContext.User.Identity.Name == null)

@@ -42,7 +42,7 @@ namespace Business.BusinessAspects
             var oprClaims = _cacheManager.Get<IEnumerable<string>>($"{CacheKeys.UserIdForClaim}={userId}");
 
             var operationName = invocation.TargetType.ReflectedType.Name;
-            if (oprClaims.Contains(operationName))
+            if (!string.IsNullOrEmpty(operationName)&&oprClaims!=null&&oprClaims.Contains(operationName))
             {
 
                 if (invocation.MethodInvocationTarget.ReflectedType.Name.ToLower().Contains("create") || invocation.MethodInvocationTarget.ReflectedType.Name.ToLower().Contains("update")) {

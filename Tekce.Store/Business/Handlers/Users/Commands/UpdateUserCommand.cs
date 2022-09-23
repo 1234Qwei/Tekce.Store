@@ -14,12 +14,11 @@ namespace Business.Handlers.Users.Commands
 {
     public class UpdateUserCommand : IRequest<IResult>
     {
-        public Guid UserId { get; set; }
+        public Guid Id { get; set; }
         public string Email { get; set; }
-        public string FullName { get; set; }
-        public string MobilePhones { get; set; }
-        public string Address { get; set; }
-        public string Notes { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string PhoneNumber{ get; set; }
         public Guid? ChangedBy { get; set; }
 
         public class UpdateUserCommandHandler : IRequestHandler<UpdateUserCommand, IResult>
@@ -37,14 +36,13 @@ namespace Business.Handlers.Users.Commands
             [LogAspect(typeof(FileLogger))]
             public async Task<IResult> Handle(UpdateUserCommand request, CancellationToken cancellationToken)
             {
-                var isThereAnyUser = await _userRepository.GetAsync(u => u.Id == request.UserId);
+                var isThereAnyUser = await _userRepository.GetAsync(u => u.Id == request.Id);
 
-                isThereAnyUser.FullName = request.FullName;
+                isThereAnyUser.FirstName = request.FirstName;
+                isThereAnyUser.LastName= request.LastName;
                 isThereAnyUser.Email = request.Email;
-                isThereAnyUser.MobilePhones = request.MobilePhones;
-                isThereAnyUser.Address = request.Address;
-                isThereAnyUser.Notes = request.Notes;
-                isThereAnyUser.ChangedBy = request.ChangedBy;
+                isThereAnyUser.PhoneNumber = request.PhoneNumber;
+                isThereAnyUser.ChangedById = request.ChangedBy;
                 _userRepository.Update(isThereAnyUser);
                 await _userRepository.SaveChangesAsync();
                 return new SuccessResult(Messages.Updated);
